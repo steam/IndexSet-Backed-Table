@@ -18,7 +18,7 @@
 		14373471178BA05700F0910D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14373470178BA05700F0910D /* Default-568h@2x.png */; };
 		14373474178BA05700F0910D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14373472178BA05700F0910D /* MainStoryboard_iPhone.storyboard */; };
 		14373477178BA05700F0910D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14373475178BA05700F0910D /* MainStoryboard_iPad.storyboard */; };
-		1437347A178BA05700F0910D /* SDMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14373479178BA05700F0910D /* SDMasterViewController.m */; };
+		1437347A178BA05700F0910D /* SDCalendarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14373479178BA05700F0910D /* SDCalendarTableViewController.m */; };
 		1437347D178BA05700F0910D /* SDDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437347C178BA05700F0910D /* SDDetailViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +38,8 @@
 		14373470178BA05700F0910D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		14373473178BA05700F0910D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		14373476178BA05700F0910D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		14373478178BA05700F0910D /* SDMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDMasterViewController.h; sourceTree = "<group>"; };
-		14373479178BA05700F0910D /* SDMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDMasterViewController.m; sourceTree = "<group>"; };
+		14373478178BA05700F0910D /* SDCalendarTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDCalendarTableViewController.h; sourceTree = "<group>"; };
+		14373479178BA05700F0910D /* SDCalendarTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDCalendarTableViewController.m; sourceTree = "<group>"; };
 		1437347B178BA05700F0910D /* SDDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDDetailViewController.h; sourceTree = "<group>"; };
 		1437347C178BA05700F0910D /* SDDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +92,8 @@
 				1437346A178BA05700F0910D /* SDAppDelegate.m */,
 				14373472178BA05700F0910D /* MainStoryboard_iPhone.storyboard */,
 				14373475178BA05700F0910D /* MainStoryboard_iPad.storyboard */,
-				14373478178BA05700F0910D /* SDMasterViewController.h */,
-				14373479178BA05700F0910D /* SDMasterViewController.m */,
+				14373478178BA05700F0910D /* SDCalendarTableViewController.h */,
+				14373479178BA05700F0910D /* SDCalendarTableViewController.m */,
 				1437347B178BA05700F0910D /* SDDetailViewController.h */,
 				1437347C178BA05700F0910D /* SDDetailViewController.m */,
 				14373461178BA05700F0910D /* Supporting Files */,
@@ -185,7 +185,7 @@
 			files = (
 				14373467178BA05700F0910D /* main.m in Sources */,
 				1437346B178BA05700F0910D /* SDAppDelegate.m in Sources */,
-				1437347A178BA05700F0910D /* SDMasterViewController.m in Sources */,
+				1437347A178BA05700F0910D /* SDCalendarTableViewController.m in Sources */,
 				1437347D178BA05700F0910D /* SDDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

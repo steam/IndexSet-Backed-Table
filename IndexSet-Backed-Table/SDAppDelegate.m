@@ -2,9 +2,7 @@
 //  SDAppDelegate.m
 //  IndexSet-Backed-Table
 //
-//  Created by Sean on 7/8/13.
-//  Copyright (c) 2013 Sean Dougherty. All rights reserved.
-//
+//  Created by Sean Dougherty on 7/8/13.
 
 #import "SDAppDelegate.h"
 

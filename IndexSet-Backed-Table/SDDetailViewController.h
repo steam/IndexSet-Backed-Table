@@ -2,15 +2,19 @@
 //  SDDetailViewController.h
 //  IndexSet-Backed-Table
 //
-//  Created by Sean on 7/8/13.
-//  Copyright (c) 2013 Sean Dougherty. All rights reserved.
-//
+//  Created by Sean Dougherty on 7/8/13.
 
 #import <UIKit/UIKit.h>
 
 @interface SDDetailViewController : UIViewController <UISplitViewControllerDelegate>
 
-@property (strong, nonatomic) id detailItem;
+@property (nonatomic, strong) NSDate *date;
+@property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+// weakly held because the Calendar Table View holds onto it
+@property (nonatomic, weak) NSDateFormatter *dateFormatter;
+
+
+- (void)configureView;
+
 @end

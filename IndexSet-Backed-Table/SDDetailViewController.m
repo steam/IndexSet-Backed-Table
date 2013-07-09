@@ -2,71 +2,71 @@
 //  SDDetailViewController.m
 //  IndexSet-Backed-Table
 //
-//  Created by Sean on 7/8/13.
-//  Copyright (c) 2013 Sean Dougherty. All rights reserved.
-//
+//  Created by Sean Dougherty on 7/8/13.
 
 #import "SDDetailViewController.h"
 
 @interface SDDetailViewController ()
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
-- (void)configureView;
 @end
 
 @implementation SDDetailViewController
 
-#pragma mark - Managing the detail item
-
-- (void)setDetailItem:(id)newDetailItem
-{
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
-        
-        // Update the view.
-        [self configureView];
-    }
-
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
-}
-
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-
-	if (self.detailItem) {
-	    self.detailDescriptionLabel.text = [self.detailItem description];
-	}
-}
+#pragma mark - View Lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 	[self configureView];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Split view
 
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
+- (void)splitViewController:(UISplitViewController *)splitController
+	 willHideViewController:(UIViewController *)viewController
+		  withBarButtonItem:(UIBarButtonItem *)barButtonItem
+	   forPopoverController:(UIPopoverController *)popoverController
 {
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    barButtonItem.title = NSLocalizedString(@"Days", @"Days");
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
 
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+- (void)splitViewController:(UISplitViewController *)splitController
+	 willShowViewController:(UIViewController *)viewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
     [self.navigationItem setLeftBarButtonItem:nil animated:YES];
     self.masterPopoverController = nil;
+}
+
+#pragma mark - Public Mehtods
+
+- (void)configureView
+{
+	if (self.date && self.dateFormatter)
+	{
+		self.dateFormatter.dateFormat = @"dd";
+	    self.dateLabel.text = [self.dateFormatter stringFromDate:self.date];
+		self.dateFormatter.dateFormat = @"EEEE MMMM d, y";
+		self.title = [self.dateFormatter stringFromDate:self.date];
+	}
+}
+
+#pragma mark - Getters / Setters
+
+- (void)setDate:(NSDate *)date
+{
+    if (_date != date)
+	{
+        _date = date;
+    }
+	
+    if (self.masterPopoverController != nil)
+	{
+        [self.masterPopoverController dismissPopoverAnimated:YES];
+    }
 }
 
 @end
